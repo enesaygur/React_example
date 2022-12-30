@@ -59,12 +59,12 @@ export default function Search() {
           {data &&
             data.map((item) => {
               return (
-                <Link
+                <Link key={item.id}
                   className="itemInsideDiv"
                   to={`/detail/${item.media_type}/${item.id}`}
-                  key={item.id}
+                  
                 >
-                  <div className="itemOutDiv">
+                  <div className="itemOutDiv" >
                     <div>
                       <div className="imdbScore">{item.vote_average}</div>
                       <img src={item.poster_path}></img>

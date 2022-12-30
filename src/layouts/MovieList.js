@@ -18,9 +18,6 @@ export default function MovieList() {
     }
     fetchData();
   }, []);
-  {data &&
-    data.map((item) => {
-    })}
   return (
     <div style={{ backgroundColor: "inherit", height: "100%" }}>
       <div

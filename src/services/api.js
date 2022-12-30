@@ -1,14 +1,13 @@
 /* eslint-disable no-unused-vars */
 import useFetch from "./useFetch";
-
-const TMDB_API_KEY = "5723c753b977e97785f5d71e4a3851ba"
+const TMDB_API_KEY = `${process.env.REACT_APP_API_KEY}`
 const API_BASE_URL = "https://api.themoviedb.org/3",
 TRENDING_BASE_URL = `${API_BASE_URL}/trending/all/day?api_key=${TMDB_API_KEY}`,
 SEARCH_BASE_URL = `${API_BASE_URL}/search/multi?api_key=${TMDB_API_KEY}&language=en-US`,
 IMAGE_BASE_URL = "https://image.tmdb.org/t/p",
 // posterImgURL = "https://image.tmdb.org/t/p/original",	
-
 TMDB = {
+
 	getMoviesAndTV: async(page, searchTerm="") => {
 		const resp = await fetch(searchTerm 
 			? `${SEARCH_BASE_URL}&query=${searchTerm}&page=${page}`
